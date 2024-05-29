@@ -22,14 +22,26 @@ const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
       )
     );
   };
-  
+
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+    localStorage.setItem(
+      "todo",
+      JSON.stringify(todos.filter((todo) => todo.id !== id))
+    );
+    toast("Task deleted successfully", {
+      autoClose: 2000,
+      theme: "dark",
+      transition: Slide,
+    });
+  };
   return (
     <>
       {todos.map((todo) => {
         return (
           <div
-            className={`bg-white py-3 px-4 mb-3 hover:scale-105 transition-all cursor-pointer ${
-              todo.completed ? "bg-green-300" : ""
+            className={` text-white py-3 px-4 mb-3 hover:scale-105 transition-all cursor-pointer ${
+              todo.completed ? "bg-green-900" : "bg-[#161822]"
             }`}
             key={todo.id.toString()}
           >
@@ -54,7 +66,7 @@ const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
                   <li>
                     <button
                       className="bg-red-700 hover:bg-red-500  text-white font-bold py-1.5 px-1.5"
-                   
+                      onClick={() => handleDelete(todo.id)}
                     >
                       <FaTrash className="text-sm" />
                     </button>

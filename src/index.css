@@ -8,5 +8,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #add8e6;
+  background: #161822;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px 15px;
+}
+.box {
+  padding: 50px 50px;
+  background: #25283c;
+  width: 550px;
+}
+@media (max-width: 600px) {
+  .box {
+    padding: 50px 15px;
+    width: 100%;
+  }
 }

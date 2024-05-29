@@ -39,20 +39,29 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <div className="py-16">
-        <div className="md:w-4/12 mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-10">
-            Mini Schedule App
-          </h1>
-          <InputField
-            task={task}
-            setTask={setTask}
-            handleSubmit={handleSubmit}
-            border={border}
-          />
-          <TodoList todos={todos} setTodos={setTodos} />
-        </div>
+      <div className="box mb-8">
+        <h1 className="xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-2xl font-bold text-center mb-10">
+          Mini Schedule App
+        </h1>
+        <InputField
+          task={task}
+          setTask={setTask}
+          handleSubmit={handleSubmit}
+          border={border}
+        />
+        <TodoList todos={todos} setTodos={setTodos} />
       </div>
+      <p className="text-center">
+        Developed by {""}
+        <a
+          href="https://jeremiahamir.com"
+          rel="noreferrer"
+          target="_blank"
+          className="font-bold"
+        >
+          Jeremiah Amir
+        </a>
+      </p>
     </>
   );
 }
