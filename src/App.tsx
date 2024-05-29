@@ -11,7 +11,7 @@ const items = getItems ? JSON.parse(getItems) : [];
 function App() {
   const [task, setTask] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>(items);
-  const [border, setBorder] = useState(false);
+  const [border, setBorder] = useState<boolean>(false);
   const handleSubmit = () => {
     if (task.length === 0) {
       setBorder(true);
