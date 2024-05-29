@@ -41,7 +41,7 @@ function App() {
       <ToastContainer />
       <div className="box mb-8">
         <h1 className="xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-2xl font-bold text-center mb-10">
-          Mini Schedule App
+          Mini Schedule
         </h1>
         <InputField
           task={task}

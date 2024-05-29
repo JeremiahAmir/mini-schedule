@@ -18,6 +18,13 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+    if (!todo.completed) {
+      toast.success("Task completed successfully", {
+        autoClose: 2000,
+        theme: "dark",
+        transition: Slide,
+      });
+    }
     localStorage.setItem(
       "todo",
       JSON.stringify(
